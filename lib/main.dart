@@ -114,5 +114,40 @@ void main() {
     4: 25,
   };
   numberOfSeats[8] = 20; //{5:150, 15:50, 4:25, 8:20}
-  
+
+// *--------------------Conditional statements--------------------*
+//if condition
+  bool isAdmin = true;
+  bool isModerator = true;
+  bool isGroupExpert = true;
+  if (isAdmin) {
+    print('you have admin privilges');
+  } else if (isModerator) {
+    print('you have moderator privilges');
+  } else if (isGroupExpert) {
+    print('you have groub bexpert privilges');
+  } else {
+    print('you have user privilges');
+  }
+  //switch case
+  String grade = 'F';
+  switch (grade) {
+    case 'A':
+      print('Your grade is excellent');
+      break;
+    case 'B':
+      print('Your grade is good');
+      break;
+    case 'C':
+      print('Your grade is fair');
+      break;
+    case 'D':
+      print('Your grade is poor');
+      break;
+    case 'F':
+      print('Your grade is fail');
+      break;
+    default:
+      print('Invalid grade!');
+  }
 }
