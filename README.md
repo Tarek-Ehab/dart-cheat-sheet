@@ -22,5 +22,7 @@ Contributions to this repository are welcome! If you have improvements, addition
 ## Resources
 
 - [Official Dart Documentation](https://dart.dev/guides)
+- [Flutter API reference documentation](https://api.flutter.dev/flutter/dart-core/dart-core-library.html)
 - [Dart Packages](https://pub.dev/)
 - [DartPad](https://dartpad.dev/)
+
