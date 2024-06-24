@@ -150,4 +150,23 @@ void main() {
     default:
       print('Invalid grade!');
   }
+// *--------------------Null Safety--------------------*
+/*
+  //non-nullable variable can be empty but can't be use before assign
+  int numb1 = 15; // non-nullable
+  //nullable variable can be empty and can be use before assign but it hold null so it will case an error
+  int? numb2; // "?" nullable
+  int res = numb2!; // "!" force to assign if you sure it will not be null
+  numb2?.toDouble(); // if it is null => don't do the method
+  numb2!.toDouble(); // force to do the method
+  // convert this null check
+  int result;
+  if (numb2 != null) {
+    result = numb2;
+  } else {
+    result = 50;
+  }
+  // to this null check
+  result = numb2 ?? 50;
+*/
 }
