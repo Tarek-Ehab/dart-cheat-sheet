@@ -180,7 +180,6 @@ void main() {
   for (int i = 0; i < 3; i++) {
     print("iteration no. $i");
   }
-
 // while loop => "iterates based on condition"
   bool isRunning = true;
   int map = 0;
@@ -191,23 +190,57 @@ void main() {
     }
     map++;
   }
-
 // do whiel loop => "iterates based on condition and iterate at least once"
   isRunning = false;
   do {
     print("Start the game and rdnder graphics for the first time");
   } while (isRunning);
-
 // for in loop => "iterates in collection variable contents"
   List<String> forInList = ["Tarek", "Mohamed", "Ahmed"];
   for (var i in forInList) {
     print(i);
   }
-
 // for each loop +> "method in Lists to make operations on each element"
 // {list_name}.forEach((variable to hold the element){operation});
   List<String> forEachList = ["Tarek", "Mohamed", "Ahmed"];
   forEachList.forEach((String element) {
     print(element);
   });
+
+// *--------------------Functions--------------------*
+// {return data type} {name of the func.} ({input parameters}){}
+  void helloFunc(String argument) {
+    print(argument);
+  }
+
+  printMyName();
+  print(sumTwoNumbers(5, 6));
+  print(finalPriece(100, 17.5));
+  print(finalPriece(100));
+  greet(5.5,age: 24, name: "Tarek", country: "Egypt");
+}
+
+void printMyName() {
+  print("------Tarek------");
+}
+
+int sumTwoNumbers(int x, int y) {
+  int z = x + y;
+  return z;
+}
+
+// Optional parameters Example
+double finalPriece(double price, [double discount = 0, String x = "USD"]) {
+// double discount = 0 => Optional parameters with default 0
+// String x = "USD" => i can add more than Optional parameter
+  double finalPrice = price - (price * (discount / 100));
+  return finalPrice;
+}
+
+// Named parameters Example
+void greet(double x,{required String name, required int age, String country = "Egypt"}) {
+  // x is normal parameter
+  // name, age is required
+  // country is optional with default = Egypt
+  print("Hello, $name! You are $age years old from $country.");
 }
