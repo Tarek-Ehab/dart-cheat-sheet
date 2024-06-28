@@ -54,7 +54,9 @@ void main() {
   // https://api.dart.dev/stable/3.4.4/dart-core/dart-core-library.html -> Classes properties in Dart like .length for string or .bitLength for int
 
   // *--------------------Collecting data types--------------------*
-  var emptyList = List<int>.empty(); //[]
+  // Empty list
+  List<String> emptyList1; //[]
+  var emptyList2 = List<int>.empty(); //[]
   // Fixed-size list
   var pastries = List<String>.filled(3, '0'); //[0,0,0]
   // Element access by index
@@ -81,7 +83,9 @@ void main() {
   var doubledNumbers = [for (var number in numbers) 2 * number]; // [2, 4, 6]
   //-------------------------------------------------------------------------
   // "Set" like "List" but without elements duplication
-  var emptySet = Set<int>(); //{}
+  // empty set
+  Set<String> emptySet1; //{}
+  var emptySet2 = Set<int>(); //{}
   // Create set of int
   var someSet = <int>{};
   // Set type inference
@@ -103,7 +107,9 @@ void main() {
   Set<String> fruits = {'apple', 'banana', 'orange'};
   print(fruits.elementAt(1)); // banana
   //-------------------------------------------------------------------------
-  var emptyMap = Map<String, num>(); //{}
+  // Map
+  Map<String, String> emptyMap1; //{}
+  var emptyMap2 = Map<String, num>(); //{}
   Map<String, num> ages = {
     'ahmed': 15,
     'kareem': 16,
@@ -157,7 +163,7 @@ void main() {
   //nullable variable can be empty and can be use before assign but it hold null so it will case an error
   int? numb2; // "?" nullable
   int res = numb2!; // "!" force to assign if you sure it will not be null
-  numb2?.toDouble(); // if it is null => don't do the method
+  numb2?.toDouble(); // if it isn't null => do the method
   numb2!.toDouble(); // force to do the method
   // convert this null check
   int result;
@@ -169,4 +175,39 @@ void main() {
   // to this null check
   result = numb2 ?? 50;
 */
+// *--------------------Loops--------------------*
+// for loop => "iterates based on number of iteration"
+  for (int i = 0; i < 3; i++) {
+    print("iteration no. $i");
+  }
+
+// while loop => "iterates based on condition"
+  bool isRunning = true;
+  int map = 0;
+  while (isRunning) {
+    print("Rednder Graphics");
+    if (map == 3) {
+      break;
+    }
+    map++;
+  }
+
+// do whiel loop => "iterates based on condition and iterate at least once"
+  isRunning = false;
+  do {
+    print("Start the game and rdnder graphics for the first time");
+  } while (isRunning);
+
+// for in loop => "iterates in collection variable contents"
+  List<String> forInList = ["Tarek", "Mohamed", "Ahmed"];
+  for (var i in forInList) {
+    print(i);
+  }
+
+// for each loop +> "method in Lists to make operations on each element"
+// {list_name}.forEach((variable to hold the element){operation});
+  List<String> forEachList = ["Tarek", "Mohamed", "Ahmed"];
+  forEachList.forEach((String element) {
+    print(element);
+  });
 }
