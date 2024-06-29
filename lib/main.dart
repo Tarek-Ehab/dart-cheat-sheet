@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main() {
   // *--------------------Primitive data types--------------------*
   //String
@@ -217,7 +219,40 @@ void main() {
   print(sumTwoNumbers(5, 6));
   print(finalPriece(100, 17.5));
   print(finalPriece(100));
-  greet(5.5,age: 24, name: "Tarek", country: "Egypt");
+  greet(5.5, age: 24, name: "Tarek", country: "Egypt");
+
+// *--------------------Exceptions--------------------*
+  List<String> exceptionsList = ["Tarek"];
+  // "e" is a variable that holds exception data and can be changed to any name
+  try {
+    print(exceptionsList[5]);
+  } catch (e) {
+    print(e);
+  }
+  // if i check on specific exception
+  try {
+    print(exceptionsList[5]);
+  } on RangeError {
+    print("Range Error");
+  }
+  // if i check on specific exception and i want to catch it too
+  try {
+    print(exceptionsList[5]);
+  } on RangeError catch (e) {
+    print("#######");
+    print(e);
+    print("Range Error");
+    // if i check for specific exceptions and also want to see if none of the ones I've selected are found
+    try {
+      print(exceptionsList[5]);
+    } on RangeError {
+      print("Range Error");
+    } on HttpException {
+      print("Http Exception");
+    } catch (e) {
+      print(e);
+    }
+  }
 }
 
 void printMyName() {
@@ -238,7 +273,8 @@ double finalPriece(double price, [double discount = 0, String x = "USD"]) {
 }
 
 // Named parameters Example
-void greet(double x,{required String name, required int age, String country = "Egypt"}) {
+void greet(double x,
+    {required String name, required int age, String country = "Egypt"}) {
   // x is normal parameter
   // name, age is required
   // country is optional with default = Egypt
