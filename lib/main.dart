@@ -1,4 +1,8 @@
 import 'dart:io';
+import 'functionFile.dart';
+import 'normalClassPerson.dart' as normalClass;
+import 'EncapsulatedClassPerson.dart' as EncapsulatedClass;
+import 'InheritanceClassAnimal.dart';
 
 void main() {
   // *--------------------Primitive data types--------------------*
@@ -253,30 +257,39 @@ void main() {
       print(e);
     }
   }
+
+// *--------------------Classes--------------------*
+  normalClass.Person Tarek1 = normalClass.Person("&&Tarek Ehab&&", 24);
+  Tarek1.display();
+
+  EncapsulatedClass.Person Tarek2 = EncapsulatedClass.Person();
+  print(Tarek2.height); //getter
+  Tarek2.height = 200; //setter
+  print(Tarek2.getHeight()); //get with normal method
+  Tarek2.setHeight(50); //set with normal method
+  print(Tarek2.getHeightWithArrowFunc()); //get with arrow function
+
+  Dog roy = Dog("Black", 50);
+  roy.bark();
+  roy.sleep();
+  Lion scar = Lion('orange', 120);
+  scar.eat();
+  Cat kitty = Cat('black', 5, 'milk');
+  print(kitty.food);
+
+//List<parents class> {nameOfList} = [child classes]
+  List<Animal> zoo = [roy, scar, kitty]; //Polymorphism
+  for (var animal in zoo) {
+    animal.eat();
+  }
+
+  Circule cir1 = Circule.origin(5);
+  cir1.draw();
+  Circule cir2 = Circule(4, 6, 3);
+  cir2.draw();
+
+// *--------------------Enum--------------------*
+  Gender gender = Gender.male;
 }
 
-void printMyName() {
-  print("------Tarek------");
-}
-
-int sumTwoNumbers(int x, int y) {
-  int z = x + y;
-  return z;
-}
-
-// Optional parameters Example
-double finalPriece(double price, [double discount = 0, String x = "USD"]) {
-// double discount = 0 => Optional parameters with default 0
-// String x = "USD" => i can add more than Optional parameter
-  double finalPrice = price - (price * (discount / 100));
-  return finalPrice;
-}
-
-// Named parameters Example
-void greet(double x,
-    {required String name, required int age, String country = "Egypt"}) {
-  // x is normal parameter
-  // name, age is required
-  // country is optional with default = Egypt
-  print("Hello, $name! You are $age years old from $country.");
-}
+enum Gender { male, female }
