@@ -1,3 +1,4 @@
+import 'dart:html_common';
 import 'dart:io';
 import 'functionFile.dart';
 import 'normalClassPerson.dart' as normalClass;
@@ -290,6 +291,14 @@ void main() {
 
 // *--------------------Enum--------------------*
   Gender gender = Gender.male;
+  switch (gender) {
+    case Gender.male:
+      print("Male");
+      break;
+    case Gender.female:
+      print("Female");
+      break;
+  }
 }
 
 enum Gender { male, female }
